@@ -1,0 +1,491 @@
+html, body{
+    width: 100%;
+    background-color: azure;
+    padding:0px;
+    margin: 0px;
+    font-family: ebrima, sans-serif;
+}
+*{
+    box-sizing: border-box;
+}
+.wrapper {
+    width:1400px;
+    max-width: 100%;
+    background-color: #fff;
+    height: 100vh;
+    margin: 0 auto;
+    display:flex;
+    overflow: auto;
+}
+
+.wrapper .sidebar{
+    width:250px;
+    border-right:0.5px solid #EFF2F7;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: sticky;
+    top:0
+}
+
+.wrapper .sidebar .logo{
+    padding:20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wrapper .sidebar .menu{
+    display: flex;
+    flex:1;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top:50px;
+
+}
+
+.wrapper .sidebar .menu .help-link{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 30px;
+    cursor: pointer;
+}
+
+.wrapper .sidebar .menu .help-link .help-icon{
+    width:22px;
+    height: 22px;
+    background: #C0CCDA;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper .sidebar .menu .help-link .help-text{
+    color: #979AA5;
+    font-weight: 400;
+    font-size: 14px;
+    padding-left:20px
+}
+
+.wrapper .sidebar .menu ul{
+    list-style-type: none;
+    padding:0px
+}
+
+.wrapper .sidebar .menu ul li{
+
+}
+
+.wrapper .sidebar .menu ul li a{
+    text-decoration:none;
+    font-weight: 400;
+    font-size: 14px;
+    color: #979AA5;
+    display: block;
+    padding: 20px;
+    justify-content: center;
+    padding-left:60px
+}
+
+.wrapper .sidebar .menu ul li a:hover{
+    color: #006156;
+    background: #FFEEA7;
+}
+.wrapper .sidebar .menu ul li a span{
+    padding-left:20px;
+}
+.wrapper .sidebar .menu ul li a img{
+    width:20px;
+    height:20px;
+}
+
+.wrapper .content-pane{
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    overflow: auto;
+}
+.wrapper .content-pane .dashboard-pane{
+    flex:4;
+    border-right:1px solid #EFF2F7;
+    padding:20px;
+}
+.wrapper .content-pane .right-menu{
+    flex:2;
+    position: sticky;
+    top: 0;
+    padding: 20px;
+}
+
+.wrapper .content-pane .right-menu .avatar-tray{
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 40px;
+    padding-top: 40px;
+}
+.avatar-tray img{
+    width: 20px;
+    margin: 10px;
+    border-radius: 30px;
+}
+
+.right-menu .panel{
+    border: 1px solid #EFF2F7 ;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.panel .panel-header{
+    display: flex;
+    justify-content: space-between;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    overflow-x: hidden;
+}
+.panel .panel-header .panel-switch{
+    display: block;
+    width: 50%;
+    text-align: center;
+    padding: 20px;
+    text-decoration: none;
+    color:#9DA8B6;
+    background: #EFF2F7;
+}
+
+.panel .panel-header .panel-switch.active{
+    color: #006156;
+    background-color: #fff;
+}
+
+.panel .panel-content{
+    padding: 20px;
+}
+
+.panel .panel-content .panel-help{
+    padding: 20px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 30px;
+    color: #444854;
+}
+
+.panel .panel-content .panel-tray{
+    width:100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 25px;
+    min-height: 80px;
+    border: 1px solid #EFF2F7;
+    border-radius: 15px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.panel .panel-content .panel-tray img{
+
+}
+
+.panel .panel-content .panel-tray span{
+    padding-left: 20px;
+}
+
+.panel .panel-content .panel-tray::after{
+    content: ' ';
+    border-left:13px solid #C8E2DE;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    position:absolute;
+    right:15px
+}
+
+.panel .panel-footer{
+    padding: 20px;
+}
+
+.panel .panel-footer .content{
+    width:100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 15px;
+    min-height: 80px;
+    border: 1px solid #EFF2F7;
+    border-radius: 15px;
+    position: relative;
+    margin-bottom: 10px;
+    background: #DEF5F2;
+}
+
+.panel .panel-footer .content::after{
+    content: ' ';
+    border-left:10px solid #63BDAF;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    position:absolute;
+    right:15px
+}
+.panel .panel-footer .content span{
+    padding-left: 15px;
+    padding-right: 25px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 24px;
+    color: #006156;
+}
+.dashboard-pane .d-header{
+    color: #444854;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 35px;
+}
+.d-header-type{
+    display: flex;
+    align-items: center;
+}
+
+.naira-logo span{
+    display: flex;
+    width:40px;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: 400;
+    font-family: sans-serif;
+    height: 40px;
+    background-color: #006156;
+    border-radius: 10px;
+}
+
+.d-header-type .naira-desc {
+    padding: 10px;
+}
+.d-header-type .naira-desc .title{
+    display: block;
+    color: #444854;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+}
+.d-header-type .naira-desc .desc{
+    display: block;
+    color: #9DA8B6;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.breadcrumb {
+    display: flex;
+    background: #006156;
+    border-radius: 24px;   
+    min-height: 231px;
+    position: relative;
+}
+
+.bread-1{
+    flex:2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('./assets/bal-bg.png');
+}
+.bread-1::before{
+    content: ' ';
+    width: 1px;
+    height: 80%;
+    background-color: rgba(255,255,255,0.2);
+    position: absolute;
+    margin-left: 40%;
+}
+.bread-1 span{
+    display: block;
+    width:100%;
+    padding: 5px;
+    padding-left:30px;
+
+}
+.bread-1 .total{
+    color:#63BDAF;
+    font-size: 14px;
+}
+.bread-1 .amount{
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 42px;
+    color:#fff;
+}
+.bread-1 .book-balance{
+    color:#C8E2DE;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+}
+.bread-2{
+    flex:3;
+    display: flex;
+}
+.bread-2 .charts{
+    flex: 1;
+    padding: 10px;
+}
+.charts .filters{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.bread-2 .legends{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.bread-2 .legends .legend-content{
+    padding-top:10px;
+    padding-bottom: 10px;
+}
+
+.bread-2 .legends .legend-content .title{
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    color: #63BDAF;
+}
+
+.bread-2 .legends .legend-content .l-amount{
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 20px;
+    color: #C8E2DE;
+}
+.charts .filters li{
+    padding-left:20px;
+    padding-right:20px;
+}
+.charts .filters li a{
+    display: block;
+    text-decoration: none;
+    color: #44A798;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    padding: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+
+}
+.charts .filters li.active a{
+    background-color: #63BDAF;
+    color: #fff;
+}
+
+.action-tabs{
+    display: flex;
+}
+
+.action-tabs .tab-pane{
+    flex:1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top:20px;
+    padding-bottom: 20px;
+}
+.action-tabs .tab-pane .tab-content{
+    width:100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 35px;
+    min-height: 80px;
+    border: 1px solid #EFF2F7;
+    border-radius: 15px;
+    position: relative;
+}
+
+.action-tabs .tab-pane .tab-content::after{
+    content: ' ';
+    border-left:13px solid #C8E2DE;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    position:absolute;
+    right:15px
+}
+.action-tabs .tab-pane:hover .tab-content::after{
+    border-left:13px solid #44A798;
+}
+.action-tabs .tab-pane .tab-content span{
+    padding-left: 20px;
+}
+.action-tabs .tab-pane:nth-child(odd){
+    padding-right:10px
+}
+.action-tabs .tab-pane:nth-child(even){
+    padding-left:10px
+}
+
+.table, table{
+    width:100%
+}
+.table{
+    border: 1px solid #EFF2F7;
+    border-radius: 15px;
+}
+
+table tbody tr > td{
+    padding:10px
+}
+table tbody tr:hover{
+    box-shadow: 1px 1px 20px #f1f1f1;
+}
+table tbody tr{
+    margin-top: 20px;
+    cursor: pointer;
+}
+td.naira-logo span{
+    background-color: #DEF5F2 !important;
+    color:#006156;
+    font-weight: 400;
+}
+
+table td.type{
+    color: #575A65;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+table td.txn-amount, table td.time{
+    font-weight: 700;
+    font-size: 14px;
+    color: #9DA8B6;
+}
+
+table td.status{
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 24px;
+    /* identical to box height, or 171% */
+
+    text-align: right;
+}
+
+table td.status.success{
+    color: #44A798;
+}
+
+table td.status.pending{
+    color: #FFCE00;
+}
+table td.status.failed{
+    color: #CC4945;
+}
